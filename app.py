@@ -4,7 +4,8 @@ from sqlalchemy import create_engine
 from Config2 import user,password
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
-from flask import Flask,  jsonify
+from flask import Flask,  jsonify, render_template
+import numpy as np
 app = Flask(__name__)
 
     #replace the user, password, hostname and database according to your configuration according to your information
@@ -26,6 +27,7 @@ Base = automap_base()
 
 Base.prepare(engine, reflect=True)
 Base.classes.keys()
+Mob=Base.classes.mobility
 
 # Base = automap_base()
 # rds_connection_string = f"{user}:{password}@localhost:5432/mobility_db"
@@ -43,12 +45,37 @@ mob_result=engine.execute('select * from mobility')
     
 @app.route("/")
 def welcome():
-    """List all available api routes."""
-    return (
-        f"Available Routes:<br/>"
-        f"/api/v1.0/names<br/>"
-        f"/api/v1.0/passengers"
-    )
+    qu= "select * from mobility"
+    transit = engine.execute(qu)
+    
+    for row in transit:
+        transit= {"transit_type":row[0]}
+    #whatever you get back from the database
+    return render_template('index.html', data=transit)
+    # """List all available api routes."""
+    # return (
+    #     f"Available Routes:<br/>"
+    #     f"/api/v1.0/mobility<br/>"
+
+# @app.route("/fetch")   
+# def fetch():
+#     data = #get something from the database
+#     return jsonify(data)
+    
+@app.route("/api/v1.0/mobility")
+
+def all_students():
+    qu= "select distinct(geo_type) from mobility"
+    transit = engine.execute(qu)
+    
+    for row in transit:
+        transit= {"transit_type":row[0]}
+        # transit_data.append(transit)
+
+    # transit_data["transit"] = transit_data
+    return transit
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

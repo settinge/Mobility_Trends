@@ -6,7 +6,7 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from flask import Flask,  jsonify, render_template
 import numpy as np
-app = Flask(__name__)
+app = Flask(__name__,template_folder='template')
 
     #replace the user, password, hostname and database according to your configuration according to your information
   
@@ -45,35 +45,53 @@ mob_result=engine.execute('select * from mobility')
     
 @app.route("/")
 def welcome():
-    qu= "select * from mobility"
-    transit = engine.execute(qu)
+    # qu= "select * from mobility"
+    # transit = engine.execute(qu)
     
-    for row in transit:
-        transit= {"transit_type":row[0]}
+    # for row in transit:
+    #     transit= {"transit_type":row[0]}
+    #     transit=jsonify(transit)
     #whatever you get back from the database
-    return render_template('index.html', data=transit)
+    return render_template('Project2.html')
+
     # """List all available api routes."""
     # return (
     #     f"Available Routes:<br/>"
     #     f"/api/v1.0/mobility<br/>"
+
+ 
+@app.route("/fetch")   
+def fetch():
+    query="select * from mobility"
+    data=engine.execute(query)
+    mob_list=[]
+    for row in data:
+        data={"geo_type":row[0],"region":row[1],"transportation_type":row[2],"score":row[3],"date":row[4]}
+        mob_list.append(data)
+    return jsonify(mob_list)   
 
 # @app.route("/fetch")   
 # def fetch():
 #     data = #get something from the database
 #     return jsonify(data)
     
-@app.route("/api/v1.0/mobility")
+# @app.route("/api/v1.0/mobility")
 
-def all_students():
-    qu= "select distinct(geo_type) from mobility"
-    transit = engine.execute(qu)
+# def all_students():
+#     qu= "select distinct(geo_type) from mobility"
+#     transit = engine.execute(qu)
     
-    for row in transit:
-        transit= {"transit_type":row[0]}
-        # transit_data.append(transit)
+#     for row in transit:
+#         transit= {"transit_type":row[0]}
+#         # transit_data.append(transit)
 
-    # transit_data["transit"] = transit_data
-    return transit
+#     # transit_data["transit"] = transit_data
+#     return jsonify(transit)
+# @app.route("/api/v1.0/mob")
+
+# def all_s():
+#     que="select * from mobility"
+
 
 
 

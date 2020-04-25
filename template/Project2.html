@@ -10,6 +10,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mobility in the Age of Coronavirus</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="./Graphs.js"></script>
+
 </head>
 
   <div class="container">
@@ -23,6 +28,7 @@
   <div class="row">
     <div class="col-md-4">
       <select id="selDataset"></select>
+      <select id="selDataset2"></select>
       <div id="plot"></div>
   <p>Graph one will allow you to bring up any country with any form of transportation</p>
   </div>
@@ -37,11 +43,7 @@
   <p>Graph three will be a bar graph that will compare the percent change amongst countries at a given time</p>
 </div>
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="./Graphs.js"></script>
-
+ 
 </body>
 
 </html>

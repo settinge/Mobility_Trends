@@ -1,5 +1,18 @@
 // Read in data
 d3.csv("/Output/cleaneddata.csv").then(function(data) {
+    for (let i = 0; i < data.length; i++) {
+
+        if (data[i].region != data[i+1].region ){
+            $('#selDataset').append(`<option value=${data[i].region}>${data[i].region} </option>`);
+        }
+ 
+    }
+// Need onclick event
+// let user_pick = d3.select("#selDataset");
+
+// let user_pick_val = d3.event.target.value;
+
+    // $() for user unput
     console.log(data);
     let Belgium = data.filter(city => city.region == "Belgium" && city.transportation_type == "driving")
    console.log(Belgium)

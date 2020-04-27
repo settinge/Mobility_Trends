@@ -1,6 +1,9 @@
 // Read in data
 d3.csv("/Output/cleaneddata.csv").then(function(data) {
 
+
+  // Graph ONE //
+  
   var x = document.getElementById("selDataset");
   var y = document.getElementById("selDataset2");
   for (let i = 0; i < data.length; i++) {
@@ -64,12 +67,10 @@ d3.csv("/Output/cleaneddata.csv").then(function(data) {
   }
 
   
-
    // let dateDriving = Belgium.map(driving => driving.transportation.)
    // console.log(dateDriving)
 
-});
-
+);
 
 // var Belgium = data.region == "Belgium"
 // console.log(Belgium)

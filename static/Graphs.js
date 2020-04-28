@@ -35,22 +35,22 @@ d3.csv("/Output/cleaneddata.csv").then(function(data) {
     // Make sure to change variables below
 
     console.log(data);
-    let Belgium = data.filter(city => city.region == city__pick && city.transportation_type == user_pick_value)
-   console.log(Belgium)
-    let belgium_date = Belgium.map(city_date => city_date.date);
-    console.log(belgium_date)
-    let belgium_score = Belgium.map(city_date => city_date.score);
-    console.log(belgium_score)
+    let country = data.filter(city => city.region == city__pick && city.transportation_type == user_pick_value)
+   console.log(country)
+    let country_date = country.map(city_date => city_date.date);
+    console.log(country_date)
+    let country_score = country.map(city_date => city_date.score);
+    console.log(country_score)
 
     
     var trace1 = {
-        x: belgium_date,
-        y: belgium_score,
+        x: country_date,
+        y: country_score,
         type: "line"
       }
 
       var layout = {
-        title: "Belgium",
+        title: "Country Mobility",
         margin: {
           l: 100,
           r: 100,

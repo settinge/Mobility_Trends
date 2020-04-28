@@ -5,7 +5,7 @@ from Config2 import user,password
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from flask import Flask,  jsonify, render_template
-import numpy as np
+
 app = Flask(__name__,template_folder='template')
 
     #replace the user, password, hostname and database according to your configuration according to your information
@@ -66,9 +66,10 @@ def fetch():
     data=engine.execute(query)
     mob_list=[]
     for row in data:
-        data={"geo_type":row[0],"region":row[1],"transportation_type":row[2],"score":row[3],"date":row[4]}
-        mob_list.append(data)
-    return jsonify(mob_list)   
+        toAppend={"geo_type":row[0],"region":row[1],"transportation_type":row[2],"score":row[3],"date":row[4]}
+        mob_list.append(toAppend)
+    data = mob_list
+    return jsonify(data)   
 
 # @app.route("/fetch")   
 # def fetch():

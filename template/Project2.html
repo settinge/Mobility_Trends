@@ -1,9 +1,8 @@
- 
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
 <body>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +14,7 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="./Graphs.js"></script>
 
-</head>
+  </head>
 
   <div class="container">
     <div class="row">
@@ -24,26 +23,36 @@
         <p>How do lockdowns around the world affect mobility?</p>
       </div>
 
- <div class = "container"></div>
-  <div class="row">
-    <div class="col-md-4">
-      <select id="selDataset"></select>
-      <select id="selDataset2"></select>
-      <div id="plot"></div>
-  <p>Graph one will allow you to bring up any country with any form of transportation</p>
-  </div>
-  
-  <div class="row">
-    <div class="col-md-4">
-  <p>Graph two will compare two or more countries against each other</p>
-  </div>
+      <!-- GRAPH ONE  -->
+      <div class="container"></div>
+      <div class="row">
+        <div class="col-md-4">
+          <select id="selDataset"></select>
+          <select id="selDataset2"></select>
+          <div id="plot"></div>
+          <p>Graph one will allow you to bring up any country with any form of transportation</p>
+        </div>
 
-  <div class="row">
-    <div class="col-md-4">
-  <p>Graph three will be a bar graph that will compare the percent change amongst countries at a given time</p>
-</div>
-  </div>
- 
+        <!-- GRAPH TWO -->
+        <div class="container"></div>
+        <div class="row">
+          <div class="col-md-4">
+            <select id="selDataset"></select>
+            <select id="selDataset2"></select>
+            <p>Graph two will compare two or more countries against each other</p>
+          </div>
+
+          <!-- GRAPH THREE -->
+          <div class="container"></div>
+          <div class="row">
+            <div class="col-md-4">
+              <select id="selDataset"></select>
+              <select id="selDataset2"></select>
+              <p>Graph three will be a bar graph that will compare the percent change amongst countries at a given time
+              </p>
+            </div>
+          </div>
+
 </body>
 
 </html>

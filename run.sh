@@ -1,1 +1,1 @@
-FLASK_APP=OurProject/app.py flask run
+FLASK_APP=mobility_app/app_updated.py flask run

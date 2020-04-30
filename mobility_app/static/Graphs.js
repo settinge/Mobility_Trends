@@ -1,5 +1,6 @@
 // Read in data
-d3.json('/fetch').then(function(data) {
+//d3.json('/fetch').then(function(data) {
+  d3.csv("../Output/cleaneddata.csv").then(function(data) {
 
   // Graph ONE //
 

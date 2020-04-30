@@ -1,1 +1,1 @@
-web: gunicorn OurProject.app:app
+web: gunicorn mobility_app.app_updated:app

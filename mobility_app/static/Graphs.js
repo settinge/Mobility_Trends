@@ -116,7 +116,7 @@ d3.json('/fetch').then(function(data) {
       }
 
       // make sure to delete one of the layouts
-      
+
       var layout2 = {
         title: "Country Mobility",
         margin: {
@@ -128,7 +128,6 @@ d3.json('/fetch').then(function(data) {
       }
 
   })
-
 
   var inputField3 = d3.select("#selDataset6");
   inputField3.on("change", function () {

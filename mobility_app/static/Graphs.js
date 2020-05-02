@@ -117,17 +117,17 @@ d3.json('/fetch').then(function(data) {
 
       // make sure to delete one of the layouts
 
-      var layout2 = {
-        title: "Country Mobility",
-        margin: {
-          l: 100,
-          r: 100,
-          t: 100,
-          b: 100
-        }
-      }
+      // var layout2 = {
+      //   title: "Country Mobility",
+      //   margin: {
+      //     l: 100,
+      //     r: 100,
+      //     t: 100,
+      //     b: 100
+      //   }
+  //     }
 
-  })
+  // })
 
   var inputField3 = d3.select("#selDataset6");
   inputField3.on("change", function () {
@@ -161,8 +161,10 @@ d3.json('/fetch').then(function(data) {
       }
 
       // // Render the plot to the div tag with id "plot"
-      Plotly.newPlot("plot", [trace2], [trace3], layout2);
+      Plotly.newPlot("plot2", [trace2], [trace3], layout2);
 
     })
 
   })
+})
+    

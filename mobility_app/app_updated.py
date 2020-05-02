@@ -54,7 +54,7 @@ def welcome():
     #     transit= {"transit_type":row[0]}
     #     transit=jsonify(transit)
     #whatever you get back from the database
-    return render_template('Project2.html')
+    return render_template('htm_rev.html')
 
     # """List all available api routes."""
     # return (

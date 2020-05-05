@@ -1,7 +1,7 @@
 import sqlalchemy 
 import psycopg2
 from sqlalchemy import create_engine
-from Config2 import user,password
+# from Config2 import user,password
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from flask import Flask,  jsonify, render_template

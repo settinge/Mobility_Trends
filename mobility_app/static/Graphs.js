@@ -86,7 +86,7 @@ d3.json('/fetch').then(function(data) {
 
     console.log(data);
     let country = data.filter(city => city.region == city__pick && city.transportation_type == user_pick_value);
-   console.log(country);
+    console.log(country);
     let country_date = country.map(city_date => city_date.date);
     console.log(country_date);
     let country_score = country.map(city_date => city_date.score);
@@ -117,26 +117,32 @@ d3.json('/fetch').then(function(data) {
 
  
   var inputField2 = d3.select("#selDataset4");
+  // pseudo code for checking if all 4 fields are filled out
+  // function p2_complete_selection
+  // if inputField2.value and inputField3.value and inputField4.value and inputField5.value
+  // return true
   inputField2.on("change", function () {
-    var user_pick_value_2 = d3.event.target.value
+    // if p2_complete_selection: 
+    var options_2=document.getElementById('selDataset4')
+    var user_pick_value_2 = options_2.options[options_2.selectedIndex].value
+    // var user_pick_value_2 = d3.event.target.value
     var select_id_2 = document.getElementById("selDataset3");
     let city__pick_2 = select_id_2.options[select_id_2.selectedIndex].value;
 
     console.log(data);
     let country = data.filter(city => city.region == city__pick_2 && city.transportation_type == user_pick_value_2);
-   console.log(country);
+    console.log(country);
     let country_date = country.map(city_date => city_date.date);
     console.log(country_date);
     let country_score = country.map(city_date => city_date.score);
     console.log(country_score);
-
     
     var trace2 = {
         x: country_date,
         y: country_score,
         type: "line"
-      }
-      var layout2 = {
+        }
+    var layout2 = {
         title: "Country Mobility",
         margin: {
           l: 100,
@@ -152,40 +158,54 @@ d3.json('/fetch').then(function(data) {
     var user_pick_value_3 = d3.event.target.value
     var select_id_3 = document.getElementById("selDataset5");
     let city__pick_3 = select_id_3.options[select_id_3.selectedIndex].value;
-
+    // console.log(`${user_pick_value_3} ${city__pick_3}`);
     console.log(data);
-    let country = data.filter(city => city.region == city__pick_3 && city.transportation_type == user_pick_value_3);
-   console.log(country);
-    let country_date = country.map(city_date => city_date.date);
-    console.log(country_date);
-    let country_score = country.map(city_date => city_date.score);
-    console.log(country_score);
+    let country_3 = data.filter(city => city.region == city__pick_3 && city.transportation_type == user_pick_value_3);
+     console.log(country_3);
+    let country_date_3 = country_3.map(city_date => city_date.date);
+    console.log(country_date_3);
+    let country_score_3 = country_3.map(city_date => city_date.score);
+    console.log(country_score_3);
 
-
-
-
-
-      var trace3 = {
-        x3: country_date,
-        y3: country_score,
-        type: "line"
+    var trace3 = {
+      x: country_date_3,
+      y: country_score_3,
+      type: "line"
       }
 
       // make sure to delete one of the layouts
 
-      var layout3 = {
-        title: "Country Mobility",
-        margin: {
-          l: 100,
-          r: 100,
-          t: 100,
-          b: 100
+    var layout3 = {
+      title: "Country Mobility",
+      margin: {
+        l: 100,
+        r: 100,
+        t: 100,
+        b: 100
         }
       }
 
-  // var tracedata = [trace2, trace3];
-  Plotly.newPlot("plot2", [trace3], layout3);
+    var options_2=document.getElementById('selDataset4')
+    var user_pick_value_2 = options_2.options[options_2.selectedIndex].value
+    var select_id_2 = document.getElementById("selDataset3");
+    let city__pick_2 = select_id_2.options[select_id_2.selectedIndex].value;
 
+    console.log(user_pick_value_2);
+    console.log(data);
+    let country_2 = data.filter(city => city.region == city__pick_2 && city.transportation_type == user_pick_value_2);
+    console.log(country_2);
+    let country_date_2 = country_2.map(city_date => city_date.date);
+    console.log(country_date_2);
+    let country_score_2 = country_2.map(city_date => city_date.score);
+    console.log(country_score_2);
+    
+    var trace2 = {
+        x: country_date_2,
+        y: country_score_2,
+        type: "line"
+        }
+  // var tracedata = [trace2, trace3];
+  Plotly.newPlot("plot2", [trace2, trace3], layout3);
   })
 
   var inputField5 = d3.select("#selDataset8");

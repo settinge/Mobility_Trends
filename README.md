@@ -21,6 +21,11 @@ Pandas, Python, Flask, SQL, Postgres, HTML, JavaScript, CSS, Plotly, Git, Github
 - A route to our html was established using Flask
 - Graphs were created using plotly to demonstrate mobility trends over time in various countries
 
+## Screenshots
+![ScreenShot](Homepage.JPG)
+
+Displays a comparison of mobility scores among various countries over time. We used plotly to create the graphs because we wanted the user to have dynamic interactions in the application.
+
 
 # Conclusions
 - Mobility scores have decreased over time

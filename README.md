@@ -2,6 +2,10 @@
 
 The relationship between mobility and covid-19 during QI of 2020 was investigated. We wanted to figure out whether subsequent shutdowns have affected people's mobility in different cities and countries around the world.
 
+# How to Run Code
+
+1). Copy and paste this link https://covid19-mobility.herokuapp.com/ into your browser. 
+
 # Technologies Used:
 
 Pandas, Python, Flask, SQL, Postgres, HTML, JavaScript, CSS, Plotly, Git, Github
